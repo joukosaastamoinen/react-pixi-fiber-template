@@ -1,11 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "@saitonakamura/react-pixi";
+import { Application } from "pixi.js";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
+const app = new Application({
+  width: 800,
+  height: 600,
+  backgroundColor: 0x10bb99,
+  view: document.getElementById("my-canvas"),
+});
+
+const root = createRoot(app.stage);
 root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
