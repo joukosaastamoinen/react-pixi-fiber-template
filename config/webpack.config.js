@@ -338,7 +338,7 @@ module.exports = function (webpackEnv) {
       ],
     },
     module: {
-      strictExportPresence: true,
+      strictExportPresence: false,
       rules: [
         // Handle node_modules packages that contain sourcemaps
         shouldUseSourceMap && {
