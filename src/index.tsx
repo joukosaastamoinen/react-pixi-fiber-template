@@ -1,16 +1,12 @@
-import { createRoot } from "@saitonakamura/react-pixi";
-import { Application } from "pixi.js";
+import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-const app = new Application({
-  width: 800,
-  height: 600,
-  backgroundColor: 0x10bb99,
-  view: document.getElementById("my-canvas"),
-});
-
-const root = createRoot(app.stage);
+const rootEl = document.getElementById("root");
+if (rootEl === null) {
+  throw new Error("Root element not found");
+}
+const root = ReactDOM.createRoot(rootEl);
 root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
